@@ -12,6 +12,7 @@ export async function angularLibraryGenerator(
     skipFormat: true,
     directory: `libs/${options.name}`,
     prefix: 'nrwl-airlines',
+    strict: true,
   });
 
   await formatFiles(tree);
