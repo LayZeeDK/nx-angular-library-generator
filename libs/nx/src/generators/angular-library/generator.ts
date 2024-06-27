@@ -11,8 +11,11 @@ export async function angularLibraryGenerator(
   tree: Tree,
   options: AngularLibraryGeneratorSchema
 ) {
-  const directory = `libs/${options.domain}/${options.type}-${options.name}`;
-  const projectName = `${options.domain}-${options.type}-${options.name}`;
+  options.name ??= '';
+  const directory =
+    `libs/${options.domain}/${options.type}-${options.name}`.replace(/-$/, '');
+  const projectName =
+    `${options.domain}-${options.type}-${options.name}`.replace(/-$/, '');
   const skipComponent = !['feature', 'ui'].includes(options.type);
 
   await libraryGenerator(tree, {
@@ -21,7 +24,11 @@ export async function angularLibraryGenerator(
     skipFormat: true,
     name: projectName,
     directory,
-    importPath: `@nrwl-airlines/${options.domain}/${options.type}-${options.name}`,
+    importPath:
+      `@nrwl-airlines/${options.domain}/${options.type}-${options.name}`.replace(
+        /-$/,
+        ''
+      ),
     tags: [`domain:${options.domain}`, `type:${options.type}`].join(','),
     prefix: options.domain === 'shared' ? 'nrwl-airlines' : options.domain,
     strict: true,

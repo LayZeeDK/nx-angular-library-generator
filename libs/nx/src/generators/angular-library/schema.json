@@ -17,6 +17,7 @@
         "$source": "argv",
         "index": 0
       },
+      "x-priority": "important",
       "x-prompt": "What name would you like to use?"
     },
     "type": {
@@ -26,5 +27,5 @@
       "x-prompt": "What is the library type?"
     }
   },
-  "required": ["domain", "name", "type"]
+  "required": ["domain", "type"]
 }
