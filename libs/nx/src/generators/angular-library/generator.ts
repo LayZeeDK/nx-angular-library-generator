@@ -44,6 +44,7 @@ export async function angularLibraryGenerator(
       export: true,
       directory: projectLibDirectory,
       changeDetection: 'OnPush',
+      displayBlock: true,
       style: 'scss',
     });
   }
