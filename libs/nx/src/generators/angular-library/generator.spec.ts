@@ -7,6 +7,7 @@ import { AngularLibraryGeneratorSchema } from './schema';
 describe('angular-library generator', () => {
   let tree: Tree;
   const options: AngularLibraryGeneratorSchema = {
+    domain: 'booking',
     name: 'test',
     type: 'feature',
   };
@@ -17,7 +18,7 @@ describe('angular-library generator', () => {
 
   it('should run successfully', async () => {
     await angularLibraryGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'feature-test');
+    const config = readProjectConfiguration(tree, 'booking-feature-test');
     expect(config).toBeDefined();
   });
 });

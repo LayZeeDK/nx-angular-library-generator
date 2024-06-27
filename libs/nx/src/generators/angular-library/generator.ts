@@ -11,8 +11,8 @@ export async function angularLibraryGenerator(
   tree: Tree,
   options: AngularLibraryGeneratorSchema
 ) {
-  const directory = `libs/${options.type}-${options.name}`;
-  const projectName = `${options.type}-${options.name}`;
+  const directory = `libs/${options.domain}/${options.type}-${options.name}`;
+  const projectName = `${options.domain}-${options.type}-${options.name}`;
   const skipComponent = !['feature', 'ui'].includes(options.type);
 
   await libraryGenerator(tree, {
@@ -21,9 +21,9 @@ export async function angularLibraryGenerator(
     skipFormat: true,
     name: projectName,
     directory,
-    importPath: `@nrwl-airlines/${options.type}-${options.name}`,
-    tags: `type:${options.type}`,
-    prefix: 'nrwl-airlines',
+    importPath: `@nrwl-airlines/${options.domain}/${options.type}-${options.name}`,
+    tags: [`domain:${options.domain}`, `type:${options.type}`].join(','),
+    prefix: options.domain === 'shared' ? 'nrwl-airlines' : options.domain,
     strict: true,
     standalone: false, // Skip default component generation to avoid type prefix
     skipModule: true, // Skip default component generation to avoid type prefix
