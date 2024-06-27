@@ -1,10 +1,19 @@
+import { libraryGenerator } from '@nx/angular/generators';
 import { formatFiles, Tree } from '@nx/devkit';
 import { AngularLibraryGeneratorSchema } from './schema';
 
 export async function angularLibraryGenerator(
   tree: Tree,
-  _options: AngularLibraryGeneratorSchema
+  options: AngularLibraryGeneratorSchema
 ) {
+  await libraryGenerator(tree, {
+    ...options,
+    projectNameAndRootFormat: 'as-provided',
+    skipFormat: true,
+    directory: `libs/${options.name}`,
+    prefix: 'nrwl-airlines',
+  });
+
   await formatFiles(tree);
 }
 
