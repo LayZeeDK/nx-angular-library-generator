@@ -6,7 +6,10 @@ import { AngularApplicationGeneratorSchema } from './schema';
 
 describe('angular-application generator', () => {
   let tree: Tree;
-  const options: AngularApplicationGeneratorSchema = { name: 'test' };
+  const options: AngularApplicationGeneratorSchema = {
+    domain: 'booking',
+    name: 'test',
+  };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
@@ -14,7 +17,7 @@ describe('angular-application generator', () => {
 
   it('should run successfully', async () => {
     await angularApplicationGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test-app');
+    const config = readProjectConfiguration(tree, 'booking-test-app');
     expect(config).toBeDefined();
   });
 });

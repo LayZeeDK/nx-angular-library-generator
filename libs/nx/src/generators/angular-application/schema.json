@@ -4,6 +4,12 @@
   "title": "",
   "type": "object",
   "properties": {
+    "domain": {
+      "alias": "d",
+      "type": "string",
+      "enum": ["booking", "check-in"],
+      "x-prompt": "What is the domain?"
+    },
     "name": {
       "type": "string",
       "description": "",
@@ -14,5 +20,5 @@
       "x-prompt": "What name would you like to use?"
     }
   },
-  "required": ["name"]
+  "required": ["domain", "name"]
 }
