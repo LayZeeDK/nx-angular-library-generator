@@ -13,6 +13,7 @@ export async function angularLibraryGenerator(
     directory: `libs/${options.name}`,
     prefix: 'nrwl-airlines',
     strict: true,
+    style: 'scss',
   });
 
   await formatFiles(tree);
