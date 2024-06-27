@@ -8,6 +8,7 @@
     },
     "angular-application": {
       "factory": "./src/generators/angular-application/generator",
+      "aliases": ["app", "application"],
       "schema": "./src/generators/angular-application/schema.json",
       "description": "Create an Angular application."
     }
