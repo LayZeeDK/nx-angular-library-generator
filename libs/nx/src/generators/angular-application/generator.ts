@@ -14,6 +14,7 @@ export async function angularApplicationGenerator(
     name: appProjectName,
     directory: `apps/${appProjectName}`,
     prefix: 'nrwl-airlines-app',
+    style: 'scss',
   });
 
   await formatFiles(tree);
