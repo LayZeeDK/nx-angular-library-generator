@@ -1,10 +1,14 @@
 # Booking
+nx g @nrwl-airlines/nx:angular-application booking-desktop --domain=booking
+nx g @nrwl-airlines/nx:angular-application booking-mobile --domain=booking
 nx g @nrwl-airlines/nx:angular-library --domain=booking --type=data-access --no-interactive
 nx g @nrwl-airlines/nx:angular-library flight-search --domain=booking --type=feature
 nx g @nrwl-airlines/nx:angular-library passenger-info --domain=booking --type=feature
 nx g @nrwl-airlines/nx:angular-library shell --domain=booking --type=feature
 
 # Check-in
+nx g @nrwl-airlines/nx:angular-application check-in-desktop --domain=check-in
+nx g @nrwl-airlines/nx:angular-application check-in-mobile --domain=check-in
 nx g @nrwl-airlines/nx:angular-library --domain=check-in --type=data-access --no-interactive
 nx g @nrwl-airlines/nx:angular-library shell --domain=check-in --type=feature
 
